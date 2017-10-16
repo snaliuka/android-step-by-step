@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SampleApp</string>
+    <string name="data">Data:</string>
+    <string name="i_m_unnamed_fragment">Hello! I\'m unnamed fragment</string>
+    <string name="hello" formatted="false">Hello! I\'m %s</string>
+    <string name="toggle_fragment">Toggle fragment</string>
+</resources>
