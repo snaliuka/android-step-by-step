@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/padding_25"
+    android:paddingBottom="@dimen/padding_25"
+    android:paddingLeft="@dimen/padding_40"
+    android:paddingRight="@dimen/padding_40"
+    android:background="@drawable/bg_bottom_gray_line">
+
+    <ImageView
+        android:id="@+id/iv_network_accessibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/network_locked"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/iv_wireless_signal_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wireless_level_4"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_toLeftOf="@id/iv_wireless_signal_level"
+        android:layout_toStartOf="@id/iv_wireless_signal_level"
+        android:layout_toRightOf="@id/iv_network_accessibility"
+        android:layout_toEndOf="@id/iv_network_accessibility"
+        android:paddingLeft="@dimen/padding_25"
+        android:paddingStart="@dimen/padding_25"
+        android:paddingRight="@dimen/padding_25"
+        android:paddingEnd="@dimen/padding_25">
+
+        <TextView
+            android:id="@+id/tv_network_ssid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="@string/ssid"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="right|end"
+            android:text="@string/connected"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

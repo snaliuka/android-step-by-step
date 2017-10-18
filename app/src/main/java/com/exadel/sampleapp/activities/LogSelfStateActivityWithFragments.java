@@ -1,4 +1,4 @@
-package com.exadel.sampleapp;
+package com.exadel.sampleapp.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.support.v4.util.Pair;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
+import com.exadel.sampleapp.R;
 import com.exadel.sampleapp.fragments.SelfLoggingStateFragment;
 
 import java.util.LinkedList;

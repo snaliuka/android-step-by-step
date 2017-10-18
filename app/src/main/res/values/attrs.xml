@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabeledSwitch">
+        <attr name="label_padding" format="dimension|reference"/>
+        <attr name="label_text_size" format="dimension|reference"/>
+        <attr name="label_text_color" format="color|reference"/>
+        <attr name="label_text_color_disabled" format="color|reference"/>
+        <attr name="label_left" format="string|reference" />
+        <attr name="label_right" format="string|reference" />
+        <attr name="enabled" format="boolean" />
+    </declare-styleable>
+</resources>

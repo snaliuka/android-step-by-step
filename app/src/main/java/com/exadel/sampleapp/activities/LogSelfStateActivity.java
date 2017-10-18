@@ -1,10 +1,12 @@
-package com.exadel.sampleapp;
+package com.exadel.sampleapp.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.exadel.sampleapp.R;
 
 public class LogSelfStateActivity extends AppCompatActivity {
 

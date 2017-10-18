@@ -1,38 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.exadel.sampleapp.MainActivity">
+    tools:context="com.exadel.sampleapp.activities.MainActivity">
 
-    <TextView
+    <Spinner
+        android:id="@+id/sp_sample_selection"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btn_launch_editor"
+        android:id="@+id/btn_launch_sample"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Launch Text Edit"/>
-
-    <Button
-        android:id="@+id/btn_explore_lc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Explore Life Cycle"/>
-
-    <Button
-        android:id="@+id/btn_explore_lc_with_fragments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Explore Life Cycle with fragmens"/>
+        android:layout_marginTop="50dp"
+        android:text="@string/launch" />
 
 </LinearLayout>

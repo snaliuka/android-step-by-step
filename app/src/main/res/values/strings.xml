@@ -4,4 +4,23 @@
     <string name="i_m_unnamed_fragment">Hello! I\'m unnamed fragment</string>
     <string name="hello" formatted="false">Hello! I\'m %s</string>
     <string name="toggle_fragment">Toggle fragment</string>
+    <string name="ssid">SSID</string>
+    <string name="connected">Connected</string>
+
+    <string name="current_progress_pattern" formatted="false">Current progress is %d</string>
+    <string name="loading_result_pattern" formatted="false">Finished with result: %s</string>
+
+    <string name="enable_wi_fi">Enable Wi-Fi</string>
+    <string name="disable_wi_fi">Disable Wi-Fi</string>
+
+    <string name="message_grant_permissions_location">Please ensure the application has access to the device location</string>
+    <string name="launch_text_edit">Launch Text Edit</string>
+    <string name="explore_life_cycle">Explore Life Cycle</string>
+    <string name="explore_life_cycle_with_fragments">Explore Life Cycle with fragments</string>
+    <string name="explore_async_tasks">Explore Async Tasks</string>
+    <string name="explore_custom_view">Explore Custom View</string>
+
+    <string name="launch">Launch</string>
+
+
 </resources>
