@@ -1,29 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.exadel.sampleapp.views.LabeledSwitch
-        android:id="@+id/ls_wifi_toggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        app:label_text_size="14sp"
-        app:label_left="@string/disable_wi_fi"
-        app:label_right="@string/enable_wi_fi"
-        app:label_padding="5dp"
-        app:enabled="true"
-        app:label_text_color="@color/color_dark_gray"
-        app:label_text_color_disabled="@color/color_light_gray"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_networks_list"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <com.exadel.sampleapp.views.LabeledSwitch
+            android:id="@+id/ls_wifi_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:label_text_size="14sp"
+            app:label_left="@string/disable_wi_fi"
+            app:label_right="@string/enable_wi_fi"
+            app:label_padding="5dp"
+            app:enabled="true"
+            app:label_text_color="@color/color_dark_gray"
+            app:label_text_color_disabled="@color/color_light_gray"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_networks_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.exadel.sampleapp.views.ProgressView
+                android:id="@+id/cv_progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
+    </LinearLayout>
+</FrameLayout>

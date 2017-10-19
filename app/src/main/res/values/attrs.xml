@@ -9,4 +9,8 @@
         <attr name="label_right" format="string|reference" />
         <attr name="enabled" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="SwitchingPositionView">
+        <attr name="textViewText" format="string|reference"/>
+    </declare-styleable>
 </resources>

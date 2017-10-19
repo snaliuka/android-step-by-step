@@ -19,8 +19,11 @@
     <string name="explore_life_cycle_with_fragments">Explore Life Cycle with fragments</string>
     <string name="explore_async_tasks">Explore Async Tasks</string>
     <string name="explore_custom_view">Explore Custom View</string>
+    <string name="explore_recycler_view">Explore Recycler View</string>
 
     <string name="launch">Launch</string>
+    <string name="say_hello">Say hello</string>
+    <string name="loading">Loading…</string>
 
 
 </resources>

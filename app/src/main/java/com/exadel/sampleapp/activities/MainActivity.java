@@ -3,6 +3,7 @@ package com.exadel.sampleapp.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
                         R.string.explore_life_cycle,
                         R.string.explore_life_cycle_with_fragments,
                         R.string.explore_async_tasks,
-                        R.string.explore_custom_view
+                        R.string.explore_custom_view,
+                        R.string.explore_recycler_view
                 ));
         sampleSelection.setAdapter(adapter);
         initListeners();
@@ -60,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                         launchActivity(AsyncTaskLoadingActivity.class);
                         break;
                     case R.string.explore_custom_view:
+                        launchActivity(WiFiControllingActivity.class);
+                        break;
+                    case R.string.explore_recycler_view:
                         launchActivity(WiFiControllingActivity.class);
                         break;
                     default:

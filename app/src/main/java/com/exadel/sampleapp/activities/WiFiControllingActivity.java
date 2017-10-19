@@ -19,10 +19,13 @@ import android.widget.Toast;
 
 import com.exadel.sampleapp.R;
 import com.exadel.sampleapp.views.LabeledSwitch;
+import com.exadel.sampleapp.views.ProgressView;
 import com.exadel.sampleapp.views.adapters.AvailableNetworksAdapter;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class WiFiControllingActivity extends AppCompatActivity {
 
@@ -35,6 +38,7 @@ public class WiFiControllingActivity extends AppCompatActivity {
 
     private LabeledSwitch wifiToggle;
     private RecyclerView networksList;
+    private ProgressView progressView;
 
     private WifiManager wifiManager;
     private BroadcastReceiver wifiScanResultReceiver = createWifiScanReceiver();
@@ -48,6 +52,7 @@ public class WiFiControllingActivity extends AppCompatActivity {
 
         // initialize variables for views
         wifiToggle = findViewById(R.id.ls_wifi_toggle);
+        progressView = findViewById(R.id.cv_progress);
 
         networksList = findViewById(R.id.rv_networks_list);
         networksList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -66,10 +71,18 @@ public class WiFiControllingActivity extends AppCompatActivity {
                 wifiManager.setWifiEnabled(enabled);
                 if (enabled == false) {
                     networksAdapter.updateDataList(Collections.<ScanResult>emptyList());
+                    progressView.hide();
+                } else {
+                    progressView.show();
                 }
             }
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        registerReceiver(wifiScanResultReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         // check current state
         int state = wifiManager.getWifiState();
         switch (state) {
@@ -81,12 +94,7 @@ public class WiFiControllingActivity extends AppCompatActivity {
                 wifiToggle.setStateEnabled(false);
                 break;
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        registerReceiver(wifiScanResultReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+        progressView.show();
         loadNetworksList();
     }
 
@@ -94,6 +102,7 @@ public class WiFiControllingActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         unregisterReceiver(wifiScanResultReceiver);
+        progressView.hide();
     }
 
     @NonNull
@@ -101,6 +110,7 @@ public class WiFiControllingActivity extends AppCompatActivity {
         return new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
+                progressView.hide();
                 List<ScanResult> scanResults = Collections.emptyList();
                 try {
                     scanResults = wifiManager.getScanResults();
@@ -112,6 +122,19 @@ public class WiFiControllingActivity extends AppCompatActivity {
                 networksList.setAdapter(networksAdapter);
             }
         };
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Map<String, Integer> permissionsMap = new HashMap<>();
+        for (int i = 0; i < permissions.length; i++) {
+            permissionsMap.put(permissions[i], grantResults[i]);
+        }
+        Integer permissionResult = permissionsMap.get(Manifest.permission.ACCESS_FINE_LOCATION);
+        if (permissionResult != null && permissionResult == PackageManager.PERMISSION_GRANTED) {
+            loadNetworksList();
+        }
     }
 
     private void loadNetworksList() {

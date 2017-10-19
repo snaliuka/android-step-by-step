@@ -42,6 +42,7 @@
         <activity android:name=".activities.LogSelfStateActivityWithFragments" />
         <activity android:name=".activities.AsyncTaskLoadingActivity" />
         <activity android:name=".activities.WiFiControllingActivity" />
+        <activity android:name=".activities.DemoViewActivity"/>
 
         <service android:name=".SyncService"/>
 
