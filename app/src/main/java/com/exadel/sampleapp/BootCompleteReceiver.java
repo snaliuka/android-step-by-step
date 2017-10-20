@@ -1,10 +1,11 @@
 package com.exadel.sampleapp;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+
+import com.exadel.sampleapp.services.StartedService;
 
 import java.io.File;
 
@@ -20,7 +21,7 @@ public class BootCompleteReceiver extends BroadcastReceiver {
         implicit.setData(Uri.fromFile(new File("/sdcard/cats.jpg")));
         context.startActivity(implicit);
 
-        Intent explicit = new Intent(context, SyncService.class);
+        Intent explicit = new Intent(context, StartedService.class);
         context.startService(explicit);
         explicit.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     }

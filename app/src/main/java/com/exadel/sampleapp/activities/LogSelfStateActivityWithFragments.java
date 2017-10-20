@@ -16,7 +16,8 @@ import com.exadel.sampleapp.fragments.SelfLoggingStateFragment;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LogSelfStateActivityWithFragments extends LogSelfStateActivity implements SelfLoggingStateFragment.LogWriter {
+public class LogSelfStateActivityWithFragments extends LogSelfStateActivity
+        implements SelfLoggingStateFragment.LogWriter {
 
     public static final String DYNAMIC_FRAGMENT_TAG = "DynamicFragment";
     private List<Pair<String, String>> fragmentsCachedLogs = new LinkedList<>();
@@ -56,14 +57,6 @@ public class LogSelfStateActivityWithFragments extends LogSelfStateActivity impl
             fragmentsCachedLogs.clear();
         }
         super.logWithTag(tag, message);
-
-
-        Fragment fragment = new SelfLoggingStateFragment();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(fragment, "TagToIdentify")
-                .addToBackStack("state_name")
-                .commit();  // commit changes
     }
 
     @NonNull
@@ -83,6 +76,7 @@ public class LogSelfStateActivityWithFragments extends LogSelfStateActivity impl
                     }
                 }
                 // !!! Important!! It's Required to commit changes
+                fragmentTransaction.addToBackStack("test");
                 fragmentTransaction.commit();
             }
         };

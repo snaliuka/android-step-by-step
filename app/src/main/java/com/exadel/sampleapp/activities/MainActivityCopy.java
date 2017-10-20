@@ -1,12 +1,8 @@
 package com.exadel.sampleapp.activities;
 
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +10,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.exadel.sampleapp.R;
-import com.exadel.sampleapp.services.BoundService;
 import com.exadel.sampleapp.views.adapters.SampleSelectionSpinnerAdapter;
 
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityCopy extends AppCompatActivity {
 
     private Button launchSampleButton;
     private Spinner sampleSelection;
@@ -84,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                         launchActivity(BoundServiceActivity.class);
                         break;
                     default:
-                        Toast.makeText(MainActivity.this, "Not mapped", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivityCopy.this, "Not mapped", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -92,13 +87,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchEditor() {
-        Intent viewTextIntent = new Intent(Intent.ACTION_EDIT);
-        viewTextIntent.putExtra(Intent.EXTRA_TEXT, "This is test to be edited");
+        Intent viewTextIntent = new Intent(Intent.ACTION_VIEW);
+        viewTextIntent.putExtra(Intent.EXTRA_TEXT, "This is test to be viewed");
         startActivity(viewTextIntent);
     }
 
     private void launchActivity(Class<? extends Activity> cls) {
-        Intent launchIntent = new Intent(MainActivity.this, cls);
+        Intent launchIntent = new Intent(MainActivityCopy.this, cls);
         startActivity(launchIntent);
     }
 
