@@ -24,12 +24,14 @@
     <string name="explore_bound_service">Explore Bound Service</string>
     <string name="explore_custom_view">Explore Custom View</string>
     <string name="explore_recycler_view">Explore Recycler View</string>
+    <string name="explore_photo_activity">Explore Request Photo</string>
 
     <string name="launch">Launch</string>
     <string name="say_hello">Say hello</string>
     <string name="loading">Loading…</string>
     <string name="rotate_screen">Rotate screen</string>
     <string name="send_to_service">Send to service</string>
+    <string name="no_permission_for_camera">No permission to use a camera</string>
 
 
 </resources>

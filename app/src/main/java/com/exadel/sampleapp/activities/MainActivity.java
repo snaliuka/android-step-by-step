@@ -1,12 +1,8 @@
 package com.exadel.sampleapp.activities;
 
 import android.app.Activity;
-import android.content.ComponentName;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +10,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.exadel.sampleapp.R;
-import com.exadel.sampleapp.services.BoundService;
 import com.exadel.sampleapp.views.adapters.SampleSelectionSpinnerAdapter;
 
 import java.util.Arrays;
@@ -43,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         R.string.explore_async_tasks,
                         R.string.explore_loader,
                         R.string.explore_custom_view,
+                        R.string.explore_photo_activity,
                         R.string.explore_recycler_view,
                         R.string.explore_bound_service
                 ));
@@ -82,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.string.explore_bound_service:
                         launchActivity(BoundServiceActivity.class);
+                        break;
+                    case R.string.explore_photo_activity:
+                        launchActivity(RequestPhotoActivity.class);
                         break;
                     default:
                         Toast.makeText(MainActivity.this, "Not mapped", Toast.LENGTH_SHORT).show();
