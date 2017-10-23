@@ -68,6 +68,16 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".ToastReceiver"
+            android:permission="com.exadel.sampleapp.receiver_permission">
+            <intent-filter>
+                <action android:name="com.exadel.broadcastsampleapp.receivers.ACTION_TRIGGER_RECEIVER"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:authorities="com.exadel.sampleapp.providers.AUTHORITY"
+            android:name=".providers.SampleContentProvider"/>
     </application>
 
 </manifest>

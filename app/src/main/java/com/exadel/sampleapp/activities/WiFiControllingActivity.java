@@ -58,7 +58,7 @@ public class WiFiControllingActivity extends AppCompatActivity {
         networksList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         // get the system service, which works with wifi module
-        wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         // set the adapter to list view
         networksAdapter = new AvailableNetworksAdapter(this, wifiManager.getScanResults());
